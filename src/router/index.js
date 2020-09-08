@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Sidebar from '../components/Sidebar.vue'
 import Sasaran from '../views/staff/Sasaran.vue'
+import Indikator from '../views/staff/Indikator.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const routes = [{
         path: '/sasaran',
         name: 'Sasaran',
         component: Sasaran
+    },
+    {
+        path: '/indikator',
+        name: 'Indikator',
+        component: Indikator
     }
 ]
 

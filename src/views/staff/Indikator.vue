@@ -7,7 +7,7 @@
                 <v-card>
                     <template>
                         <v-row class="ml-10">
-                            <h1>Sasaran</h1>
+                            <h1>Indikator</h1>
                         </v-row>
                     </template>
                     <!-- <template>
@@ -19,7 +19,7 @@
                                 v-bind="attrs"
                                 v-on="on">
                                 <v-icon>mdi-file-plus-outline</v-icon>
-                                Sasaran
+                                Indikator
                             </v-btn>
                         </v-row>
                         
@@ -37,7 +37,7 @@
                                             <v-icon>mdi-file-plus-outline</v-icon>
                                         </v-btn>
                                     </template>
-                                    <span>Tambah data sasaran</span>
+                                    <span>Tambah data indikator</span>
                                 </v-tooltip>
                                 <!-- <v-btn
                                     tile small  icon
@@ -86,6 +86,18 @@
                                     <v-tooltip bottom>
                                         <template v-slot:activator="{ on, attrs }">
                                             <v-btn
+                                                class="ma-2" tile small color="success" @click="detailData(item)" icon
+                                                v-bind="attrs"
+                                                v-on="on"
+                                                >
+                                                <v-icon>mdi-eye-outline</v-icon>
+                                            </v-btn>
+                                        </template>
+                                        <span>Detail</span>
+                                    </v-tooltip>
+                                    <v-tooltip bottom>
+                                        <template v-slot:activator="{ on, attrs }">
+                                            <v-btn
                                                 class="ma-2" tile small color="primary" @click="editdata(item)" icon
                                                 v-bind="attrs"
                                                 v-on="on"
@@ -95,7 +107,10 @@
                                         </template>
                                         <span>Edit data</span>
                                     </v-tooltip>
-                                    <!-- <v-btn class="ma-2" tile small color="primary" @click="editdata(item)" icon title="edit">
+                                    <!-- <v-btn class="ma-2" tile small color="success" @click="detailData(item)" icon title="detail">
+                                        <v-icon>mdi-eye-outline</v-icon>
+                                    </v-btn>
+                                    <v-btn class="ma-2" tile small color="primary" @click="editData(item)" icon title="edit">
                                         <v-icon>mdi-square-edit-outline</v-icon>
                                     </v-btn> -->
                                     <!-- <v-btn class="ma-2" tile small color="red" @click="actionDelete(item)" icon title="delete">
@@ -131,17 +146,21 @@ export default {
             modalDatePicker: false,
             headers : [
                 { text: '#', value:'nomor'},
-                { text: 'Sasaran', value: 'sasaran'},
-                { text: 'Waktu Pengerjaan Awal', value: 'waktuAwal' },
-                { text: 'Waktu Pengerjaan Akhir', value: 'waktuAkhir' },
+                { text: 'Indikator', value: 'indikator'},
+                { text: 'Target', value: 'target' },
+                { text: 'Realisasi', value: 'realisasi' },
+                { text: '% Realisasi', value: 'persenRealisasi' },
+                { text: 'Anggaran', value: 'anggaran' },
                 { text: 'Aksi', value: 'aksi', sortable: false },
             ],
             dataKonten: [
                 {
                     nomor : '1',
-                    sasaran : 'Sasaran A',
-                    waktuAwal : '1 Agustus 2020',
-                    waktuAkhir : '31 Agustus 2020'
+                    indikator : 'Pengendalian SDM',
+                    target : '24',
+                    realisasi : '20',
+                    persenRealisasi : '8,3%',
+                    anggaran :'Rp 10.000.000'
                 }
             ]
         }
